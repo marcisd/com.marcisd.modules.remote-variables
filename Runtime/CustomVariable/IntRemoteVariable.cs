@@ -23,11 +23,12 @@ namespace MSD.Modules.RemoteVariables
 			}
 		}
 
-		public IntRemote remote;
+		[SerializeField]
+		private IntRemote _remote;
 
 		protected override bool IsReadonly => true;
 
-		protected override int GetValue() => remote.Value;
+		protected override int GetValue() => _remote.Value;
 
 		protected override void SetValue(int value) => throw new NotImplementedException();
 	}

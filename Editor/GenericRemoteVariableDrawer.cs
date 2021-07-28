@@ -4,9 +4,9 @@ using UnityEngine;
 using MSD.Editor;
 
 /*===============================================================
-Project:	Poop Deck
+Project:	Remote Variables
 Developer:	Marci San Diego
-Company:	David Morgan Education - marcianosd@dm-ed.com
+Company:	Personal - marcisandiego@gmail.com
 Date:		21/04/2020 18:40
 ===============================================================*/
 
@@ -52,14 +52,17 @@ namespace MSD.Modules.RemoteVariables.Editor
 				PropertyInfo statusInfo = fieldInfo.FieldType.GetProperty("Status");
 
 				object instance = property.GetObjectInstance();
-
-				string valueDisplay = valueInfo.GetValue(instance).ToString();
+				object value = valueInfo.GetValue(instance);
+				string valueDisplay = value != null ? value.ToString() : string.Empty;
+				
 				GenericRemoteVariableBase.Status status = (GenericRemoteVariableBase.Status)(statusInfo.GetValue(instance));
 
 				if (status == GenericRemoteVariableBase.Status.Found) {
 					EditorGUI.SelectableLabel(selectableLabelRect, valueDisplay);
 				} else {
-					EditorGUI.LabelField(selectableLabelRect, status.ToString());
+					using (new GUIColorScope(Color.red)) {
+						EditorGUI.LabelField(selectableLabelRect, status.ToString());
+					}
 				}
 			} else {
 				EditorGUI.LabelField(selectableLabelRect, string.Empty);

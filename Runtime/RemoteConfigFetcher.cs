@@ -32,7 +32,7 @@ namespace MSD.Modules.RemoteVariables
 		[SerializeField, HideInInspector]
 		private string _environmentId = string.Empty;
 
-		private TaskCompletionSource<bool> _tcs = null;
+		private TaskCompletionSource<bool> _tcs;
 
 		public string EnvironmentName {
 			get => _environmentName;
@@ -64,7 +64,7 @@ namespace MSD.Modules.RemoteVariables
 			ConfigManager.SetEnvironmentID(EnvironmentId);
 			ConfigManager.FetchConfigs(new UserAttributes(), new AppAttributes());
 			_tcs = new TaskCompletionSource<bool>();
-			await _tcs.Task;
+			await _tcs.Task.ConfigureAwait(false);
 		}
 
 		internal void SetEnvironment(string name, string id)
