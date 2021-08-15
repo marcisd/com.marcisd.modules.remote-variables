@@ -1,16 +1,12 @@
 {
-    "name": "com.marcisd.modules.remote-variables.Editor",
+    "name": "MSD.Modules.RemoteVariables",
     "rootNamespace": "",
     "references": [
-        "GUID:9233cfc9765e54957bcad862b35cccc9",
         "GUID:ba077e9046d1840a59ff50229afd23f0",
-        "GUID:3ec39c0cacd0d4cbe95032b899ddbe93",
-        "GUID:d4f8f3098ca064117a9b67941bfedd91",
-        "GUID:dfedbea4dc7154f92b6f47c1877bce29"
+        "GUID:b78bb0fad89964a07803c9a361795fd8",
+        "GUID:d4f8f3098ca064117a9b67941bfedd91"
     ],
-    "includePlatforms": [
-        "Editor"
-    ],
+    "includePlatforms": [],
     "excludePlatforms": [],
     "allowUnsafeCode": false,
     "overrideReferences": false,

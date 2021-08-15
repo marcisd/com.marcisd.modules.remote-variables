@@ -1,3 +1,3 @@
 using System.Runtime.CompilerServices;
 
-[assembly: InternalsVisibleTo("com.marcisd.modules.remote-variables.Editor")]
+[assembly: InternalsVisibleTo("MSD.Modules.RemoteVariables.Editor")]
